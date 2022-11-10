@@ -1,0 +1,48 @@
+<section>
+  <div class="all-apps">
+    <header>
+      Appointment:
+      <strong>{{ dateService.date | async | moment: "DD.MM.YYYY" }}</strong>
+      <hr />
+    </header>
+
+    <main>
+      <ul *ngIf="appointments.length; else noAppointments">
+        <li
+          class="appointment"
+          *ngFor="let appointment of appointments; let i = index"
+        >
+          <span>
+            <strong>{{ i + 1 }}</strong>
+            {{ appointment.title }}
+          </span>
+          <button class="btn btn-primary" (click)="remove(appointment)">
+            Remove
+          </button>
+        </li>
+      </ul>
+      <ng-template #noAppointments>
+        <p class="text-center">No appointments yet...</p>
+      </ng-template>
+    </main>
+  </div>
+
+  <footer>
+    <form (ngSubmit)="submit()" [formGroup]="form">
+      <input
+        type="text"
+        formControlName="title"
+        placeholder="Add description of meeting"
+      />
+      <input type="time" placeholder="Add time" />
+
+      <button
+        type="submit"
+        class="btn btn-primary btn-block"
+        [disabled]="form.invalid"
+      >
+        Add
+      </button>
+    </form>
+  </footer>
+</section>

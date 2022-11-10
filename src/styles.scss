@@ -1,1 +1,98 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap");
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+:root {
+  --primary-color: #dc3545;
+  --dark-color: #333;
+  --light-color: #f4f4f4;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.mat-typography {
+  font-size: 1rem !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Source Sans Pro", sans-serif !important;
+  text-decoration: none;
+  font-size: 1rem;
+  background: white;
+  color: #333;
+}
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+
+  &:hover {
+    color: #666;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+table th {
+  background: var(--light-color);
+}
+.btn {
+  display: inline-block;
+  background: var(--light-color);
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s;
+  outline: none;
+  border-radius: 8px;
+
+  &:disabled {
+    background: var(--dark-color);
+    color: white;
+    cursor: not-allowed;
+  }
+  &:hover:not(:disabled) {
+    opacity: 0.8;
+  }
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+.text-center {
+  text-align: center;
+}
